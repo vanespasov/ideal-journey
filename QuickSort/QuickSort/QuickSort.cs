@@ -6,14 +6,24 @@ using System.Threading.Tasks;
 
 namespace QuickSort
 {
+    // QuickSort is one of the sort alghorithmsh that works on that way that recursively divides the collection of numbers
+    // into progressively smaller "partitions" within the collection and sorts those partitions
+    // in place and the final result is a fully sorted array.    
+    // The steps are:
+    // 1. Select a pivot point (implementation below selects the last value).
+    // 2. Reorder the collection so that all values less than the pivot are before that pivot, and all values greater than the pivot are after the pivot. After this partitioning, the pivot element is in its final position.
+    // 3. Recursively do this partitioning on the "less than pivot" set and the "greater than pivot" set.
+    // Continue recursively applying this algorithm until the array is sorted.
     public class QuickSort
     {
         int[] _array;
+
         public QuickSort(int[] array)
         {
             _array = array;
         }
 
+        #region Private methods
         private int Partition(int[] array, int low, int high)
         {
             //1. Select a pivot point.
@@ -62,6 +72,7 @@ namespace QuickSort
             }
             Console.WriteLine();
         }
+        #endregion
 
         #region Public methods
         public void Sort(int low, int high)
